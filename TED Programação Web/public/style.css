@@ -1,0 +1,138 @@
+/* styles.css */
+:root{ --bg:#f6f7fb;
+     --card:#ffffff; 
+     --accent:#0b73ff; 
+     --muted:#6b7280; 
+     --shadow: 0 6px 18px rgba(17,24,39,0.08); 
+}
+*{box-sizing:border-box}
+body{font-family:Inter,system-ui,Segoe UI,Roboto,"Helvetica Neue",Arial; 
+    background:linear-gradient(90deg, hsl(214, 79%, 36%), hsl(0, 0%, 0%)); 
+    margin:0; 
+    color:#111827
+    }
+
+.topbar{
+    background:linear-gradient(90deg, hsl(214, 79%, 36%), hsl(0, 0%, 0%)); 
+    color:white; 
+    padding:1.25rem;
+    text-align: center;
+}
+
+.container{display:grid; 
+    grid-template-columns:1fr 420px; 
+    gap:1.25rem; 
+    padding:1.5rem; 
+    max-width:1100px; 
+    margin:1rem auto
+}
+
+.form-card, .list-card{background:var(--card); 
+    border-radius:12px; 
+    padding:1rem; 
+    box-shadow:var(--shadow)
+}
+
+label{display:block; 
+    margin-bottom:0.6rem
+}
+
+input,select{width:100%; 
+    padding:0.6rem; 
+    border-radius:8px; 
+    border:1px solid #e6e9ef
+}
+
+.actions{display:flex; 
+    gap:0.5rem; 
+    margin-top:0.5rem
+}
+
+button{padding:0.6rem 1rem; 
+    border-radius:10px; 
+    border:0; cursor:pointer
+}
+
+button[type="submit"]{background:var(--accent); 
+    color:white
+}
+
+button.secondary{background:#eef2ff}
+
+
+.reservas-list li > div:first-child {
+    flex-grow: 1;
+    min-width: 0;
+}
+
+.reservas-list li strong {
+    white-space: nowrap;      
+    overflow: hidden;         
+    text-overflow: ellipsis;  
+    display: block;           
+}
+
+.reservas-list{
+    list-style:none;
+    padding:0; 
+    margin:0;
+}
+
+.reservas-list li{padding:0.8rem; 
+    border-radius:8px; 
+    border:1px solid #eef2ff; 
+    margin-bottom:0.6rem; 
+    display:flex; 
+    justify-content:space-between; 
+    align-items:left;
+}
+
+.reserva-meta{font-size:0.9rem; 
+    color:var(--muted)
+}
+
+.small-btn{background:transparent; 
+    border:1px solid #eee; 
+    padding:0.3rem 0.5rem; 
+    border-radius:6px; 
+    cursor:pointer
+}
+
+#formMsg{margin-top:0.6rem}
+
+.reservado {
+    background-color: #ff4d4d;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+}
+
+
+/* Agenda */
+.agenda-card{background:var(--card);
+    border-radius:12px;
+    padding:1rem;
+    box-shadow:var(--shadow);
+    grid-column:1/-1;
+    margin-top:1rem
+}
+.agenda-grid{display:grid;
+    grid-template-columns:repeat(auto-fill,minmax(120px,1fr));
+    gap:0.5rem;
+    margin-top:1rem
+}
+.agenda-slot{padding:0.6rem;
+    border-radius:8px;
+    border:1px solid #d1d5db;
+    text-align:center
+}
+.agenda-slot.disponivel{background:#e6ffef}
+.agenda-slot.reservado{background:#ffecec}
+
+@media (max-width:900px){
+    .container
+        {
+            grid-template-columns:1fr; 
+            padding:1rem
+        }
+}

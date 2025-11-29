@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Nosso Horário</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <h1>Nosso Horário</h1>
+  </header>
+
+  <main class="container">
+    <section class="form-card">
+      <h2>Reservar campo</h2>
+      <form id="reservaForm" novalidate>
+        <label class="required">Nome <span style="color:hsl(0, 100%, 71%)">*</span>
+          <input type="text" id="nome" name="nome" required minlength="3" />
+        </label>
+        <br>
+        <label class="required">Celular <span style="color:hsl(0, 100%, 71%)">*</span>
+          <input type="tel" id="celular" name="celular" pattern="^\+?[0-9 \-()]{8,20}$" required />
+        </label>
+        <br>
+        <label class="required">Campo <span style="color:hsl(0, 100%, 71%)">*</span>
+          <select id="campo" name="campo" required>
+            <option value="">Selecione</option>
+            <option value="1">Campo 1</option>
+            <option value="2">Campo 2</option>
+            <option value="3">Quadra Coberta</option>
+          </select>
+        </label>
+        <br>
+        <label class="required">Data <span style="color:hsl(0, 100%, 71%)">*</span>
+          <input type="date" id="data" name="data" required />
+        </label>  
+        <br>
+        <label class="required">Hora <span style="color:hsl(0, 100%, 71%)">*</span>
+          <input type="time" id="hora" name="hora" required />
+        </label>
+        <br>
+        <label class="required">Duração (horas) <span style="color:hsl(0, 100%, 71%)">*</span>
+          <input type="number" id="duracao" name="duracao" min="1" max="12" value="1" required />
+        </label>
+        <br>
+        <div class="actions">
+          <button type="submit">Reservar</button>
+          <button type="reset" class="secondary">Limpar</button>
+        </div>
+        <div id="formMsg" role="status" aria-live="polite"></div>
+      </form>
+    </section>
+
+    <section class="list-card">
+      <h2>Reservas</h2> <br>
+      <ul id="listaReservas" class="reservas-list"></ul>
+    </section>
+
+    <section class="agenda-card">
+      <h2>Horários do Dia</h2>
+      <label>Selecione o dia:
+        <input type="date" id="agendaData" />
+      </label>
+      <label>Campo:
+        <select id="agendaCampo">
+          <option value="1">Campo 1</option>
+          <option value="2">Campo 2</option>
+          <option value="3">Quadra Coberta</option>
+        </select>
+      </label>
+
+      <div id="agendaGrid" class="agenda-grid"></div>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
